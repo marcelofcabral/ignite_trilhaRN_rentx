@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   useFonts,
@@ -13,8 +13,11 @@ import {
 import AppLoading from "expo-app-loading";
 import { ThemeProvider } from "styled-components";
 
+import { AppProvider } from "./src/hooks";
 import { Routes } from "./src/routes";
 import theme from "./src/styles/theme";
+
+import { database } from "./src/database";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,7 +34,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
     </ThemeProvider>
   );
 }

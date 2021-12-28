@@ -35,7 +35,7 @@ export function Splash() {
 
   function startApp() {
     navigation.navigate({
-      name: "Home" as never,
+      name: "SignIn" as never,
       params: null as never,
     });
   }
